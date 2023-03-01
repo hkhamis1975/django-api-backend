@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m%_$h8=e^0v-64&34h49bn)w+gwccuta_7=q7khqvy69n@**=-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -64,7 +64,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 }
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001','http://localhost:8000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:3001',
+                        'http://localhost:8000', 'http://127.0.0.1:3000']
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
