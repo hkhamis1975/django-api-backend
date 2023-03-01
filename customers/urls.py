@@ -7,5 +7,5 @@ app_name = 'customers'
 
 urlpatterns = [
     path('api/customers/', views.customers, name='customers'),
-    path('api/customers/<int:id>/', views.customers, name='customer'),
+    path('api/customers/<int:id>/', views.customer, name='customer'),
 ]
