@@ -11,6 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def customers(request):
     if request.method == 'GET':
         data = Customer.objects.all()
@@ -24,7 +25,9 @@ def customers(request):
             return Response({'customer': serializer.data}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'POST', 'DELETE']) 
+
+@api_view(['GET', 'POST', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def customer(request, id):
     try:
         data = Customer.objects.get(pk=id)
